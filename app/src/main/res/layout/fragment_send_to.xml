@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:background="@color/primaryColor1"
+        tools:context=".view.SendToFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Home"
+                android:layout_margin="15dp"
+                android:textColor="@color/primaryColor3"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/plusBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/plus_selector"
+                app:layout_constraintStart_toStartOf="@+id/text"
+                app:layout_constraintTop_toBottomOf="@+id/text" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Click here to add new Contacts"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plusBtn"
+                app:layout_constraintStart_toEndOf="@+id/plusBtn"
+                app:layout_constraintTop_toTopOf="@+id/plusBtn" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_height="wrap_content"
+                android:elevation="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/plusBtn"
+                app:layout_constraintTop_toBottomOf="@+id/plusBtn"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/add_item_background"
+                    android:padding="5dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:padding="5dp"
+                            android:text="Name"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/primaryColor4" />
+
+                        <EditText
+                            android:id="@+id/typeName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/custom_edit_text"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:hint="Type Contact's name"
+                            android:inputType="textPersonName"
+                            android:maxLength="25"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/white"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll1">
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:padding="5dp"
+                            android:text="Number"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textSize="20sp" />
+
+
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/ccp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:ccpDialog_backgroundColor="@color/primaryColor2"
+                            app:ccp_arrowColor="@color/black"
+                            app:ccp_arrowSize="16dp"
+                            app:ccp_showNameCode="false"
+                            app:ccp_countryPreference="dz,ma,ca"
+                            app:ccp_excludedCountries="il"
+                            app:ccp_rememberLastSelection="true"
+                            app:ccp_textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/textView5"
+                             />
+
+
+                        <EditText
+                            android:id="@+id/TypePhone"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+
+                            android:background="@drawable/custom_edit_text"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:hint="Type Contact's phone"
+                            android:inputType="phone"
+                            android:maxLength="12"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/white"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ccp"
+                            app:layout_constraintTop_toTopOf="@+id/ccp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:padding="5dp"
+                            android:text="Role"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/primaryColor4" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/checkbox_option1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:fontFamily="@font/ubuntu_medium"
+                                android:text="Send to Them Location SMS"
+                                android:textColor="@color/black" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox_option2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:fontFamily="@font/ubuntu_medium"
+                                android:text="Receive from them control SMS"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/saveBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/save_selector"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ll3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_medium"
+                android:text="Contacts"
+                android:layout_margin="15dp"
+                android:textColor="@color/primaryColor3"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+            <LinearLayout
+                android:id="@+id/ll4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_chooser_background"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title">
+
+                <LinearLayout
+                    android:id="@+id/SendAndReceiveLL"
+                    android:background="@drawable/list_item_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    >
+                    <ImageButton
+                        android:id="@+id/SendAndReceiveBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/sendandreceive" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:layout_marginStart="3dp"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:text="Send/recieve"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:background="@drawable/list_item_unselected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:id="@+id/SendLL"
+                    >
+                    <ImageButton
+                        android:id="@+id/SendBtn"
+
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/send" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:layout_gravity="center_vertical"
+                        android:text="Send"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:background="@drawable/list_item_unselected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:id="@+id/ReceiveLL"
+                    >
+                    <ImageButton
+                        android:id="@+id/ReceiveBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@null"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/recieve"
+                        android:contentDescription="recieve" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:layout_gravity="center_vertical"
+                        android:text="Recieve"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/recyclerview_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/ll4" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</layout >

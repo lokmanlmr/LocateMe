@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/sendTofragment"
+            android:title="Home"
+            android:icon="@drawable/home"
+            />
+
+        <item
+            android:id="@+id/settingsAndDescription"
+            android:title="Settings"
+            android:icon="@drawable/setting"/>
+    </group>
+</menu>
